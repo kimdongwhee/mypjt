@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Memmo Write Form</title>
+        <style>
+            form > label{
+                display: inline-block;
+                width: 120px;
+            }
+            form > input{
+                padding : 4px;
+                margin-bottom : 4px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Onememo Form</h1>
+        <form action="http://localhost:8000/onememos/createMemo/" method="POST" id="memoWriteForm">
+            <label for="memo">한줄메모</label>
+            <input type="text" id="memo" name="memoContent" size="100" placeholder="내용을 입력해주세요." autocomplete="off">
+            <br>
+            <label for="memo">이름</label>
+            <input type="text" id="memo" name="memoName" size="100" placeholder="내용을 입력해주세요." autocomplete="off">
+            <br>
+            <label for="memo">이메일</label>
+            <input type="text" id="memo" name="memoEmail" size="100" placeholder="내용을 입력해주세요." autocomplete="off">
+            <br>
+            {%csrf_token%}
+        </form>
+        <div>
+        <button type="submit" form="memoWriteForm">등록</button>
+        </div>                
+    </body>
+</html>
